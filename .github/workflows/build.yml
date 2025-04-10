@@ -23,7 +23,7 @@ jobs:
       - uses: leafo/gh-actions-lua@v9
         with:
           luaVersion: "5.3"
-          
+
       - uses: leafo/gh-actions-luarocks@v4
       
       - name: Install luacc
@@ -39,13 +39,13 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: modules-flat
-          path: dist/*.lua
+          path: dist/modules/*.lua
       
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: modules-luz
-          path: dist/*.luz
+          path: dist/modules/*.luz
       
       # via https://github.com/softprops/action-gh-release/issues/270
       - name: Tag
@@ -66,5 +66,5 @@ jobs:
           draft: true
           tag_name: ${{ steps.tag.outputs.tag }}
           files: |
-            dist/*.lua
-            dist/*.luz
+            dist/modules/*.lua
+            dist/modules/*.luz
