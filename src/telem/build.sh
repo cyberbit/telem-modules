@@ -12,7 +12,7 @@ for module in $(ls -d src/telem/modules/*/ 2> /dev/null | sed 's/src\/telem\/mod
     outpath=${2:-$workdir/dist/modules/$module.lua}
     
     echo "building $module..."
-    luacc $module.init -o $outpath -i src/telem/modules $(for i in src/telem/modules/$module/**/*.lua; do [[ $i != "$module/init.lua" ]] && echo $i; done | sed "y/\//./;s/\.lua$//")
+    luacc $module.init -o $outpath -i src/telem/modules $(for i in src/telem/modules/$module/**/*.lua; do [[ $i != "src/telem/modules/$module/init.lua" ]] && echo ${i#src/telem/modules/}; done | sed "y/\//./;s/\.lua$//")
 
     echo 'packing...'
 
