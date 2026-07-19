@@ -1,0 +1,9 @@
+{
+    // "autobuild": true,
+    "triggerTaskOnSave.tasks": {
+        "build modules": [
+            "src/telem/**/*.lua",
+            "src/telem/**/*.lua",
+        ]
+    }
+}
