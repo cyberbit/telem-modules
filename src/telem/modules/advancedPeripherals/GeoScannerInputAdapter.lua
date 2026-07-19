@@ -15,6 +15,7 @@ return function (api)
         -- TODO no unit? intentional?? meh???
         self.storageQueries = {
             fn():callElse('chunkAnalyze', {})
+                :orElse({}) -- catch case where scan is on cooldown
                 :map(function (k, v) return api.Metric{ name = k, value = v } end)
                 :values()
         }
