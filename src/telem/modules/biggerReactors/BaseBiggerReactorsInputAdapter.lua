@@ -83,7 +83,7 @@ return function (api)
         local tempMetrics = {}
         local queue = {}
 
-        -- execute single-metric queries from a queue
+        -- queue single-metric queries
         for _, category in ipairs(self.categories) do
             for k, v in pairs(self.queries[category]) do
                 table.insert(queue, queueHelper(
@@ -94,20 +94,22 @@ return function (api)
             end
         end
 
-        parallel.waitForAll(table.unpack(queue))
-
-        -- execute storage queries, which may return multiple metrics
+        -- queue storage queries, which may return multiple metrics
         -- these have no category and are always included
         for k, v in pairs(self.storageQueries) do
-            local tempResult = v:from(component):result()
+            table.insert(queue, function ()
+                local tempResult = v:from(component):result()
 
-            for _, metric in ipairs(tempResult) do
-                metric.name = 'storage:' .. metric.name
-                metric.source = source
+                for _, metric in ipairs(tempResult) do
+                    metric.name = 'storage:' .. metric.name
+                    metric.source = source
 
-                table.insert(tempMetrics, metric)
-            end
+                    table.insert(tempMetrics, metric)
+                end
+            end)
         end
+
+        parallel.waitForAll(table.unpack(queue))
 
         return api.MetricCollection(table.unpack(tempMetrics))
     end
