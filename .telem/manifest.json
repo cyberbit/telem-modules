@@ -1,0 +1,211 @@
+{
+  "schemaVersion": "1",
+  "id": "telem-modules",
+  "name": "cyberbit's Telem Modules",
+  "description": "First-party Telem modules for Mekanism, Advanced Peripherals, and more",
+  "modules": [
+    {
+      "id": "powah",
+      "name": "Powah",
+      "description": "Provides inputs for Powah devices when the Advanced Peripherals mod is installed.",
+      "version": "0.1.0",
+      "documentation": "HELP.md#powah",
+      "requirements": {
+        "advancedperipherals": "^0.7.25",
+        "powah": "*"
+      },
+      "provides": {
+        "inputs": [
+          "energyCell",
+          "furnator",
+          "magmator",
+          "reactor",
+          "solarPanel",
+          "thermoGenerator"
+        ]
+      },
+      "artifacts": {
+        "source": {
+          "type": "source-tree",
+          "location": "src/telem/modules/powah",
+          "entrypoint": "init.lua"
+        },
+        "lua": {
+          "type": "lua",
+          "location": "$release/powah.lua"
+        },
+        "luz": {
+          "type": "luz",
+          "location": "$release/powah.luz"
+        }
+      }
+    },
+    {
+      "id": "advancedPeripherals",
+      "name": "Advanced Peripherals",
+      "description": "Provides inputs for Advanced Peripherals devices, including storage support for Applied Energistics and Refined Storage",
+      "version": "0.1.0",
+      "documentation": "HELP.md#advanced-peripherals",
+      "requirements": {
+        "advancedperipherals": "^0.7.25"
+      },
+      "provides": {
+        "inputs": [
+          "energyDetector",
+          "environmentDetector",
+          "geoScanner",
+          "inventoryManager",
+          "meBridge",
+          "playerDetector",
+          "redstoneIntegrator",
+          "rsBridge"
+        ]
+      },
+      "artifacts": {
+        "source": {
+          "type": "source-tree",
+          "location": "src/telem/modules/advancedPeripherals",
+          "entrypoint": "init.lua"
+        },
+        "lua": {
+          "type": "lua",
+          "location": "$release/advancedPeripherals.lua"
+        },
+        "luz": {
+          "type": "luz",
+          "location": "$release/advancedPeripherals.luz"
+        }
+      }
+    },
+    {
+      "id": "biggerReactors",
+      "name": "Bigger Reactors",
+      "description": "Provides inputs for Bigger Reactors machines",
+      "version": "0.1.0",
+      "documentation": "HELP.md#bigger-reactors",
+      "requirements": {
+        "biggerreactors": "^0.6.0"
+      },
+      "provides": {
+        "inputs": [
+          "reactor",
+          "turbine"
+        ]
+      },
+      "artifacts": {
+        "source": {
+          "type": "source-tree",
+          "location": "src/telem/modules/biggerReactors",
+          "entrypoint": "init.lua"
+        },
+        "lua": {
+          "type": "lua",
+          "location": "$release/biggerReactors.lua"
+        },
+        "luz": {
+          "type": "luz",
+          "location": "$release/biggerReactors.luz"
+        }
+      }
+    },
+    {
+      "id": "mekanism",
+      "name": "Mekanism",
+      "description": "Provides inputs for Mekanism machines and generators",
+      "version": "0.1.0",
+      "documentation": "HELP.md#mekanism",
+      "requirements": {
+        "mekanism": "^10.4.0",
+        "mekanismgenerators": "^10.4.0"
+      },
+      "provides": {
+        "inputs": [
+          "apns",
+          "bin",
+          "bioGenerator",
+          "boiler",
+          "chemicalCrystallizer",
+          "dissolutionChamber",
+          "chemicalInfuser",
+          "injectionChamber",
+          "chemicalOxidizer",
+          "chemicalTank",
+          "chemicalWasher",
+          "combiner",
+          "crusher",
+          "digitalMiner",
+          "dynamicTank",
+          "electricPump",
+          "electrolyticSeparator",
+          "energizedSmelter",
+          "energyCube",
+          "enrichmentChamber",
+          "fissionReactor",
+          "fluidTank",
+          "fluidicPlenisher",
+          "assemblicator",
+          "fuelwoodHeater",
+          "fusionReactor",
+          "gasGenerator",
+          "heatGenerator",
+          "inductionMatrix",
+          "industrialTurbine",
+          "isotopicCentrifuge",
+          "laser",
+          "laserAmplifier",
+          "laserTractorBeam",
+          "logisticalSorter",
+          "mechanicalPipe",
+          "metallurgicInfuser",
+          "nutritionalLiquifier",
+          "oredictionificator",
+          "osmiumCompressor",
+          "paintingMachine",
+          "pigmentExtractor",
+          "pigmentMixer",
+          "precisionSawmill",
+          "reactionChamber",
+          "pressurizedTube",
+          "purificationChamber",
+          "quantumEntangloporter",
+          "wasteBarrel",
+          "resistiveHeater",
+          "condensentrator",
+          "sps",
+          "seismicVibrator",
+          "solarGenerator",
+          "neutronActivator",
+          "teleporter",
+          "evaporationPlant",
+          "universalCable",
+          "windGenerator",
+          "combiningFactory",
+          "compressingFactory",
+          "crushingFactory",
+          "enrichingFactory",
+          "infusingFactory",
+          "injectingFactory",
+          "purifyingFactory",
+          "sawingFactory",
+          "smeltingFactory",
+          "qioDriveArray"
+        ]
+      },
+      "artifacts": {
+        "source": {
+          "type": "source-tree",
+          "location": "src/telem/modules/mekanism",
+          "entrypoint": "init.lua"
+        },
+        "lua": {
+          "type": "lua",
+          "location": "$release/mekanism.lua"
+        },
+        "luz": {
+          "type": "luz",
+          "location": "$release/mekanism.luz"
+        }
+      }
+    }
+  ]
+}
